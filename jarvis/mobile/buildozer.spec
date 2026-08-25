@@ -19,8 +19,8 @@ source.include_exts = py,png,jpg,kv,atlas,json
 version = 1.0.0
 
 # (list) Application requirements
-# comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,pyjnius,requests,speechrecognition,pyaudio,beautifulsoup4,pypdf
+# Pure python / supported p4a Android recipes
+requirements = python3,kivy,pyjnius,requests,speechrecognition,beautifulsoup4,pypdf
 
 # (list) Permissions
 permissions = INTERNET,RECORD_AUDIO,FOREGROUND_SERVICE,CALL_PHONE,SEND_SMS,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE,SYSTEM_ALERT_WINDOW
@@ -31,6 +31,9 @@ android.api = 33
 # (int) Minimum API required
 android.minapi = 24
 
+# (list) Supported architectures
+android.archs = arm64-v8a
+
 # (bool) Indicate if the application should be fullscreen or not
 fullscreen = 0
 
@@ -39,3 +42,4 @@ services = JarvisBackgroundService:services/background_service.py
 
 # (str) Orientation
 orientation = portrait
+android.accept_sdk_licenses = True
