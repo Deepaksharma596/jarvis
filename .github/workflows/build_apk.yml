@@ -23,9 +23,18 @@ jobs:
         sudo apt-get install -y build-essential ccache git libffi-dev libssl-dev python3-dev zip unzip zlib1g-dev openjdk-17-jdk autoconf libtool pkg-config aidl
         pip install --upgrade buildozer cython
 
+    - name: Setup AIDL Symlink & Android SDK
+      run: |
+        AIDL_BIN=$(find /usr/local/lib/android/sdk/build-tools /usr -name aidl -type f 2>/dev/null | head -n 1)
+        if [ -n "$AIDL_BIN" ]; then
+          sudo ln -sf "$AIDL_BIN" /usr/local/bin/aidl
+          sudo chmod +x /usr/local/bin/aidl
+          echo "Symlinked AIDL from $AIDL_BIN to /usr/local/bin/aidl"
+        fi
+
     - name: Build APK with Buildozer
       run: |
-        export PATH=$PATH:/usr/local/lib/android/sdk/build-tools/33.0.2:/usr/local/lib/android/sdk/build-tools/34.0.0
+        export PATH=/usr/local/bin:$PATH:$(find /usr/local/lib/android/sdk/build-tools -mindepth 1 -maxdepth 1 | tr '\n' ':')
         cd jarvis/mobile
         buildozer -v android debug
 
