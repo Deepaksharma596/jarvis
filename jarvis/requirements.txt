@@ -1,0 +1,20 @@
+# JARVIS - Windows AI Desktop Voice Assistant Dependencies
+PyQt5>=5.15.0
+edge-tts>=6.1.9
+pyttsx3>=2.90
+SpeechRecognition>=3.10.0
+PyAutoGUI>=0.9.54
+pywin32>=306
+psutil>=5.9.0
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+pypdf>=3.17.0
+keyring>=24.3.0
+google-api-python-client>=2.110.0
+google-auth-oauthlib>=1.2.0
+pytest>=7.4.0
+python-dotenv>=1.0.0
+screen-brightness-control>=0.27.0
+pycaw>=20251023
+sounddevice>=0.5.0
+pygame>=2.5.0

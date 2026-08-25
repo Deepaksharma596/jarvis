@@ -1,0 +1,27 @@
+# Python & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Environment & Secrets
+.env
+*.env
+.vault.dat
+credentials.json
+token.json
+GMAIL_OAUTH_TOKEN
+
+# App Local Cache
+.jarvis/
+.buildozer/
+bin/
+
+# IDE & OS
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
