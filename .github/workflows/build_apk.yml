@@ -25,11 +25,11 @@ jobs:
 
     - name: Build APK with Buildozer
       run: |
-        cd mobile
+        cd jarvis/mobile
         yes y | buildozer -v android debug
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
         name: JARVIS_Mobile_APK
-        path: mobile/bin/*.apk
+        path: jarvis/mobile/bin/*.apk
