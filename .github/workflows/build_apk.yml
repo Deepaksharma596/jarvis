@@ -20,13 +20,13 @@ jobs:
     - name: Install dependencies & Buildozer
       run: |
         sudo apt-get update
-        sudo apt-get install -y build-essential ccache git libffi-dev libssl-dev python3-dev zip unzip zlib1g-dev openjdk-17-jdk
+        sudo apt-get install -y build-essential ccache git libffi-dev libssl-dev python3-dev zip unzip zlib1g-dev openjdk-17-jdk autoconf libtool pkg-config
         pip install --upgrade buildozer cython
 
     - name: Build APK with Buildozer
       run: |
         cd mobile
-        buildozer android debug
+        yes y | buildozer -v android debug
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
